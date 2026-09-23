@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haus Of Heaven | Makeup Artistry</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Luxury Serif & Clean Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rosegold-light': '#f4d0b5',
+                        'rosegold': '#dfa375',
+                        'rosegold-dark': '#a86c43',
+                        'luxury-black': '#09090b',
+                        'luxury-card': '#141416',
+                        'luxury-border': 'rgba(223, 163, 117, 0.25)',
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                        script: ['Great Vibes', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Rose Gold Gradients & Styling */
+        .text-rosegold-gradient {
+            background: linear-gradient(135deg, #fce0cd 0%, #dfa375 50%, #b87b50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-rosegold-gradient {
+            background: linear-gradient(135deg, #eec1a0 0%, #c98858 50%, #995c33 100%);
+        }
+
+        .border-rosegold-glow {
+            border: 1px solid rgba(223, 163, 117, 0.3);
+            box-shadow: 0 0 15px rgba(223, 163, 117, 0.08);
+        }
+
+        .border-rosegold-active {
+            border: 1px solid rgba(223, 163, 117, 0.9);
+            box-shadow: 0 0 20px rgba(223, 163, 117, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a221c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a86c43;
+        }
+
+        .glass-panel {
+            background: rgba(20, 20, 22, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-luxury-black text-gray-200 font-sans min-h-screen flex flex-col justify-between selection:bg-rosegold selection:text-black">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-luxury-border shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            
+            <!-- Left Side: Title & Tagline -->
+            <div class="flex flex-col">
+                <a href="#home" onclick="switchTab('book')" class="group">
+                    <h1 class="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-wider text-rosegold-gradient transition-all group-hover:opacity-90">
+                        HAUS OF HEAVEN
+                    </h1>
+                </a>
+                <p class="font-script text-rosegold text-sm sm:text-base md:text-lg tracking-wide hidden sm:block">
+                    Enhancing your beauty, elevating your confidence.
+                </p>
+            </div>
+
+            <!-- Right Side: Top Right Corner Logo SVG -->
+            <div class="flex items-center space-x-3">
+                <a href="https://www.instagram.com/hausofheavenofficial" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center text-xs font-semibold tracking-widest text-rosegold hover:text-rosegold-light transition mr-2 uppercase">
+                    <i class="fa-brands fa-instagram text-lg mr-1.5"></i> @hausofheavenofficial
+                </a>
+                <!-- Custom SVG Logo matching exact specification -->
+                <div class="relative group cursor-pointer" onclick="switchTab('book')" title="Haus Of Heaven Makeup Artistry">
+                    <svg class="w-16 h-16 sm:w-20 sm:h-20 transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_0_8px_rgba(223,163,117,0.3)]" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="roseGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fce0cd" />
+                                <stop offset="50%" stop-color="#dfa375" />
+                                <stop offset="100%" stop-color="#a86c43" />
+                            </linearGradient>
+                            <path id="textArc" d="M 50,150 A 100,100 0 1,1 250,150" />
+                        </defs>
+                        <!-- Circular Badge Outer Dark Fill -->
+                        <circle cx="150" cy="150" r="142" fill="#0c0c0e" stroke="url(#roseGoldGrad)" stroke-width="2.5" />
+                        <!-- Inner Double Ring -->
+                        <circle cx="150" cy="150" r="134" fill="none" stroke="url(#roseGoldGrad)" stroke-width="1.2" opacity="0.8" />
+                        
+                        <!-- Curved Text: MAKE UP ARTISTRY -->
+                        <text font-family="Montserrat" font-size="16" font-weight="600" fill="url(#roseGoldGrad)" letter-spacing="6">
+                            <textPath href="#textArc" startOffset="50%" text-anchor="middle">
+                                MAKE UP ARTISTRY
+                            </textPath>
+                        </text>
+
+                        <!-- Makeup Brushes Accents on Sides -->
+                        <path d="M 35,135 L 55,160 M 35,135 Q 32,130 38,130 Q 42,135 35,135" stroke="url(#roseGoldGrad)" stroke-width="2" fill="url(#roseGoldGrad)" />
+                        <path d="M 265,135 L 245,160 M 265,135 Q 268,130 262,130 Q 258,135 265,135" stroke="url(#roseGoldGrad)" stroke-width="2" fill="url(#roseGoldGrad)" />
+
+                        <!-- Monogram 'HH' -->
+                        <text x="105" y="132" font-family="Cinzel" font-size="70" font-weight="400" fill="url(#roseGoldGrad)">H</text>
+                        <text x="152" y="132" font-family="Cinzel" font-size="70" font-weight="400" fill="url(#roseGoldGrad)">H</text>
+
+                        <!-- Script Text: Haus Of Heaven -->
+                        <text x="150" y="180" font-family="Great Vibes" font-size="44" fill="url(#roseGoldGrad)" text-anchor="middle">Haus Of Heaven</text>
+
+                        <!-- Glossy Lips Illustration -->
+                        <g transform="translate(108, 195) scale(0.7)">
+                            <!-- Lip Base -->
+                            <path d="M 10 25 Q 60 -5 110 25 Q 90 60 60 65 Q 30 60 10 25 Z" fill="#b83b6e" stroke="#801c43" stroke-width="2" />
+                            <!-- Upper Lip Line -->
+                            <path d="M 10 25 Q 40 10 60 20 Q 80 10 110 25 Q 60 38 10 25 Z" fill="#d64980" />
+                            <!-- Lower Lip Highlight -->
+                            <ellipse cx="60" cy="45" rx="22" ry="10" fill="#f48fb1" opacity="0.75" />
+                            <ellipse cx="50" cy="42" rx="8" ry="4" fill="#ffffff" opacity="0.6" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar Tabs -->
+        <nav class="bg-black/60 border-t border-luxury-border/40">
+            <div class="max-w-7xl mx-auto px-4 flex justify-around sm:justify-center sm:space-x-8 text-xs sm:text-sm font-semibold tracking-wider uppercase py-2.5">
+                <button id="nav-book" onclick="switchTab('book')" class="nav-btn text-rosegold border-b-2 border-rosegold pb-1 transition-all">
+                    <i class="fa-solid fa-calendar-check mr-1.5"></i>Book Now
+                </button>
+                <button id="nav-services" onclick="switchTab('services')" class="nav-btn text-gray-400 hover:text-rosegold pb-1 transition-all">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-1.5"></i>Services & Prices
+                </button>
+                <button id="nav-policies" onclick="switchTab('policies')" class="nav-btn text-gray-400 hover:text-rosegold pb-1 transition-all">
+                    <i class="fa-solid fa-shield-halved mr-1.5"></i>Policies & Terms
+                </button>
+                <button id="nav-contact" onclick="switchTab('contact')" class="nav-btn text-gray-400 hover:text-rosegold pb-1 transition-all">
+                    <i class="fa-brands fa-instagram mr-1.5"></i>Contact
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-5xl mx-auto px-4 py-8 sm:py-12 flex-grow w-full">
+
+        <!-- ================= TAB 1: BOOK NOW WORKFLOW ================= -->
+        <section id="tab-book" class="tab-content block space-y-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-rosegold text-xs font-semibold tracking-widest uppercase">Luxury Makeup Experience</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-rosegold-gradient mt-1 mb-2 font-bold">Reserve Your Glam</h2>
+                <p class="text-gray-400 text-sm">Follow our simple 5-step booking process. A £15 deposit is required to confirm your appointment slot.</p>
+            </div>
+
+            <!-- Booking Progress Bar -->
+            <div class="max-w-3xl mx-auto bg-luxury-card p-4 rounded-xl border border-rosegold-glow">
+                <div class="flex justify-between text-xs font-medium text-gray-400 mb-2">
+                    <span id="step-label-1" class="text-rosegold font-bold">1. Service</span>
+                    <span id="step-label-2">2. Date & Time</span>
+                    <span id="step-label-3">3. Details</span>
+                    <span id="step-label-4">4. Policies</span>
+                    <span id="step-label-5">5. Summary</span>
+                </div>
+                <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-rosegold-gradient h-full transition-all duration-300 w-1/5"></div>
+                </div>
+            </div>
+
+            <!-- STEP 1: SELECT SERVICE -->
+            <div id="booking-step-1" class="step-card max-w-3xl mx-auto space-y-4">
+                <h3 class="font-serif text-xl text-rosegold mb-4"><i class="fa-solid fa-sparkles mr-2"></i>Step 1: Choose Your Makeup Service</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Soft Glam Card -->
+                    <div id="card-soft-glam" onclick="selectService('Soft Glam', 35)" class="cursor-pointer bg-luxury-card p-6 rounded-2xl border border-luxury-border hover:border-rosegold transition-all group relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h4 class="font-serif text-xl font-semibold text-gray-100 group-hover:text-rosegold transition">Soft Glam</h4>
+                                <span class="text-xs text-rosegold bg-rosegold/10 px-2.5 py-1 rounded-full mt-1 inline-block">60 Minutes</span>
+                            </div>
+                            <span class="font-serif text-2xl font-bold text-rosegold-gradient">£35</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            A flawless, natural-looking base with soft eye makeup and lashes.
+                        </p>
+                        <div class="border-t border-luxury-border/40 pt-3 text-[11px] text-gray-400 italic">
+                            Perfect for brunches, date nights, photoshoots and everyday glamour.
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-xs font-semibold text-rosegold">
+                            <span><i class="fa-solid fa-check text-green-400 mr-1"></i> Strip Lash Included</span>
+                            <i class="fa-solid fa-circle-chevron-right text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Full Glam Card -->
+                    <div id="card-full-glam" onclick="selectService('Full Glam', 45)" class="cursor-pointer bg-luxury-card p-6 rounded-2xl border border-luxury-border hover:border-rosegold transition-all group relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h4 class="font-serif text-xl font-semibold text-gray-100 group-hover:text-rosegold transition">Full Glam</h4>
+                                <span class="text-xs text-rosegold bg-rosegold/10 px-2.5 py-1 rounded-full mt-1 inline-block">90 Minutes</span>
+                            </div>
+                            <span class="font-serif text-2xl font-bold text-rosegold-gradient">£45</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Full coverage complexion, defined eyes, lashes included and enhanced detailing.
+                        </p>
+                        <div class="border-t border-luxury-border/40 pt-3 text-[11px] text-gray-400 italic">
+                            Perfect for birthdays, celebrations, nights out and special occasions.
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-xs font-semibold text-rosegold">
+                            <span><i class="fa-solid fa-check text-green-400 mr-1"></i> Strip Lash Included</span>
+                            <i class="fa-solid fa-circle-chevron-right text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Included Notice Banner -->
+                <div class="bg-rosegold/10 border border-rosegold/30 p-4 rounded-xl text-center text-xs text-rosegold font-semibold tracking-wider">
+                    <i class="fa-solid fa-eye mr-2"></i> STRIP LASH APPLICATION INCLUDED WITH ALL SERVICES
+                </div>
+            </div>
+
+            <!-- STEP 2: DATE & TIME PICKER -->
+            <div id="booking-step-2" class="step-card max-w-3xl mx-auto space-y-6 hidden">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-serif text-xl text-rosegold"><i class="fa-regular fa-clock mr-2"></i>Step 2: Select Date & Slot</h3>
+                    <button onclick="goToStep(1)" class="text-xs text-gray-400 hover:text-rosegold underline"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-luxury-card p-6 rounded-2xl border border-luxury-border">
+                    <div>
+                        <label class="block text-xs font-semibold text-rosegold uppercase mb-2">Select Date</label>
+                        <input type="date" id="booking-date" onchange="generateTimeSlots()" class="w-full bg-black/70 border border-luxury-border rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-rosegold">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-rosegold uppercase mb-2">Available Time Slots</label>
+                        <div id="time-slots-container" class="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto pr-1">
+                            <p class="text-xs text-gray-500 col-span-2 py-4 text-center">Please choose a date to view available time slots.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end">
+                    <button id="btn-to-step-3" onclick="goToStep(3)" disabled class="bg-rosegold-gradient text-black font-semibold text-sm px-8 py-3 rounded-xl opacity-50 cursor-not-allowed hover:opacity-90 transition shadow-lg">
+                        Continue to Client Details <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 3: CLIENT DETAILS -->
+            <div id="booking-step-3" class="step-card max-w-3xl mx-auto space-y-6 hidden">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-serif text-xl text-rosegold"><i class="fa-solid fa-user-pen mr-2"></i>Step 3: Client Details</h3>
+                    <button onclick="goToStep(2)" class="text-xs text-gray-400 hover:text-rosegold underline"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                </div>
+
+                <form id="client-form" onsubmit="event.preventDefault(); validateStep3();" class="bg-luxury-card p-6 rounded-2xl border border-luxury-border space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Full Name *</label>
+                            <input type="text" id="client-name" required placeholder="e.g. Sarah Jenkins" class="w-full bg-black/70 border border-luxury-border rounded-xl px-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-rosegold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Phone Number *</label>
+                            <input type="tel" id="client-phone" required placeholder="e.g. 07123 456789" class="w-full bg-black/70 border border-luxury-border rounded-xl px-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-rosegold">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Email Address *</label>
+                            <input type="email" id="client-email" required placeholder="sarah@example.com" class="w-full bg-black/70 border border-luxury-border rounded-xl px-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-rosegold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Instagram Handle (Optional)</label>
+                            <input type="text" id="client-instagram" placeholder="@yourhandle" class="w-full bg-black/70 border border-luxury-border rounded-xl px-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-rosegold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Skin Sensitivities & Medical Notes</label>
+                        <textarea id="client-notes" rows="3" placeholder="Please list any skin sensitivities, allergies, or recent facial treatments (chemical peels, retinol use, etc.)" class="w-full bg-black/70 border border-luxury-border rounded-xl p-3 text-sm text-gray-200 focus:outline-none focus:border-rosegold"></textarea>
+                    </div>
+
+                    <div class="pt-2 flex justify-end">
+                        <button type="submit" class="bg-rosegold-gradient text-black font-semibold text-sm px-8 py-3 rounded-xl hover:opacity-90 transition shadow-lg">
+                            Proceed to Policies <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- STEP 4: POLICY CHECKLIST -->
+            <div id="booking-step-4" class="step-card max-w-3xl mx-auto space-y-6 hidden">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-serif text-xl text-rosegold"><i class="fa-solid fa-file-contract mr-2"></i>Step 4: Policy Acknowledgment</h3>
+                    <button onclick="goToStep(3)" class="text-xs text-gray-400 hover:text-rosegold underline"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                </div>
+
+                <div class="bg-luxury-card p-6 rounded-2xl border border-luxury-border space-y-4">
+                    <p class="text-xs text-gray-400 mb-2">Please read and tick each policy agreement before finalizing your booking:</p>
+
+                    <label class="flex items-start space-x-3 cursor-pointer p-3 bg-black/40 rounded-xl border border-luxury-border/50 hover:border-rosegold">
+                        <input type="checkbox" id="policy-check-1" onchange="checkPolicies()" class="mt-1 accent-rosegold w-4 h-4">
+                        <span class="text-xs text-gray-300"><strong>£15 Deposit:</strong> I understand a non-refundable £15 deposit is required to confirm my appointment, which will be deducted from my final balance.</span>
+                    </label>
+
+                    <label class="flex items-start space-x-3 cursor-pointer p-3 bg-black/40 rounded-xl border border-luxury-border/50 hover:border-rosegold">
+                        <input type="checkbox" id="policy-check-2" onchange="checkPolicies()" class="mt-1 accent-rosegold w-4 h-4">
+                        <span class="text-xs text-gray-300"><strong>48-Hour Cancellation Notice:</strong> A minimum of 48 hours' notice is required to reschedule. Same-day cancellations or no-shows forfeit the deposit.</span>
+                    </label>
+
+                    <label class="flex items-start space-x-3 cursor-pointer p-3 bg-black/40 rounded-xl border border-luxury-border/50 hover:border-rosegold">
+                        <input type="checkbox" id="policy-check-3" onchange="checkPolicies()" class="mt-1 accent-rosegold w-4 h-4">
+                        <span class="text-xs text-gray-300"><strong>Preparation & Late Arrivals:</strong> I will arrive with a clean, freshly moisturized face with no makeup. Arrivals more than 15 mins late may result in a shortened or canceled appointment.</span>
+                    </label>
+
+                    <label class="flex items-start space-x-3 cursor-pointer p-3 bg-black/40 rounded-xl border border-luxury-border/50 hover:border-rosegold">
+                        <input type="checkbox" id="policy-check-4" onchange="checkPolicies()" class="mt-1 accent-rosegold w-4 h-4">
+                        <span class="text-xs text-gray-300"><strong>Strict No Guests Policy:</strong> Due to limited studio space, only the client receiving the makeup service may attend the appointment.</span>
+                    </label>
+                </div>
+
+                <div class="flex justify-end">
+                    <button id="btn-to-step-5" onclick="goToStep(5)" disabled class="bg-rosegold-gradient text-black font-semibold text-sm px-8 py-3 rounded-xl opacity-50 cursor-not-allowed hover:opacity-90 transition shadow-lg">
+                        View Order Summary <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 5: ORDER SUMMARY & DEPOSIT PAYMENT -->
+            <div id="booking-step-5" class="step-card max-w-3xl mx-auto space-y-6 hidden">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-serif text-xl text-rosegold"><i class="fa-solid fa-receipt mr-2"></i>Step 5: Order Summary & Deposit</h3>
+                    <button onclick="goToStep(4)" class="text-xs text-gray-400 hover:text-rosegold underline"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                </div>
+
+                <div class="bg-luxury-card p-6 rounded-2xl border border-rosegold-glow space-y-6">
+                    <!-- Dynamic Summary Card -->
+                    <div class="border-b border-luxury-border pb-4 space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Selected Service:</span>
+                            <span id="summary-service-name" class="font-semibold text-rosegold">Soft Glam</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Date & Time:</span>
+                            <span id="summary-datetime" class="font-semibold text-gray-200">Oct 24, 2026 at 11:00 AM</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Client Name:</span>
+                            <span id="summary-client-name" class="text-gray-200">Sarah Jenkins</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Strip Lash Application:</span>
+                            <span class="text-green-400 font-medium">INCLUDED (£0)</span>
+                        </div>
+                    </div>
+
+                    <!-- Payment Calculation Breakdown -->
+                    <div class="space-y-3 bg-black/50 p-4 rounded-xl border border-luxury-border/60">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Total Service Price:</span>
+                            <span id="summary-total-price" class="font-serif font-bold text-gray-200">£35.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-rosegold font-semibold">
+                            <span>Deposit Payable Now:</span>
+                            <span>£15.00</span>
+                        </div>
+                        <div class="border-t border-luxury-border/40 pt-2 flex justify-between text-sm font-bold text-gray-100">
+                            <span>Remaining Balance (Due on Appointment Day):</span>
+                            <span id="summary-balance-due" class="text-rosegold-gradient">£20.00</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400 italic">Remaining balance payable via Cash or Bank Transfer on the day.</p>
+                    </div>
+
+                    <!-- Payment Action Simulator -->
+                    <div class="text-center pt-2">
+                        <button onclick="processDepositPayment()" class="w-full bg-rosegold-gradient text-black font-bold text-base py-4 rounded-xl hover:opacity-95 transition transform active:scale-98 shadow-xl flex items-center justify-center">
+                            <i class="fa-solid fa-lock mr-2"></i> Pay £15 Deposit & Confirm Slot
+                        </button>
+                        <p class="text-[11px] text-gray-500 mt-2"><i class="fa-solid fa-shield mr-1"></i> Secure simulated transaction for Haus Of Heaven Makeup Artistry</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUCCESS CONFIRMATION MODAL STATE -->
+            <div id="booking-success" class="max-w-xl mx-auto bg-luxury-card p-8 rounded-3xl border border-rosegold-active text-center space-y-6 hidden shadow-2xl">
+                <div class="w-20 h-20 bg-rosegold/20 rounded-full flex items-center justify-center mx-auto border border-rosegold">
+                    <i class="fa-solid fa-check text-3xl text-rosegold"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-2xl text-rosegold-gradient font-bold">Appointment Confirmed!</h3>
+                    <p class="text-gray-300 text-sm mt-1">Thank you for booking with Haus Of Heaven Makeup Artistry.</p>
+                </div>
+                <div class="bg-black/60 p-4 rounded-xl text-left text-xs space-y-2 border border-luxury-border">
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Booking Reference:</span>
+                        <span id="conf-ref" class="font-mono text-rosegold font-bold">HH-8921</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Deposit Received:</span>
+                        <span class="text-green-400 font-semibold">£15.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Remaining Due:</span>
+                        <span id="conf-balance" class="text-rosegold font-bold">£20.00 (Cash / Transfer)</span>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400">A confirmation email and prep guide has been sent to your inbox. We look forward to creating your glam!</p>
+                <button onclick="resetBooking()" class="bg-luxury-border text-rosegold hover:bg-rosegold/20 px-6 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition">
+                    Book Another Slot
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ================= TAB 2: SERVICES & PRICES ================= -->
+        <section id="tab-services" class="tab-content hidden space-y-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-rosegold text-xs font-semibold tracking-widest uppercase">Service Menu</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-rosegold-gradient mt-1 mb-2 font-bold">Price List</h2>
+                <p class="text-gray-400 text-sm">Flawless makeup application customized to enhance your natural features.</p>
+            </div>
+
+            <!-- Price Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Soft Glam Card -->
+                <div class="bg-luxury-card p-8 rounded-2xl border border-luxury-border hover:border-rosegold transition-all space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-serif text-2xl text-gray-100 font-bold">Soft Glam</h3>
+                                <span class="text-xs text-rosegold">Duration: 60 Mins</span>
+                            </div>
+                            <span class="font-serif text-3xl font-bold text-rosegold-gradient">£35</span>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                            A flawless, natural-looking base with soft eye makeup and lashes. Designed to accentuate your natural beauty while keeping skin radiant and light.
+                        </p>
+                        <div class="bg-black/40 p-3 rounded-xl border border-luxury-border/40 text-xs text-gray-400 italic">
+                            Perfect for brunches, date nights, photoshoots and everyday glamour.
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-luxury-border/50 flex items-center justify-between">
+                        <span class="text-xs text-rosegold font-semibold"><i class="fa-solid fa-sparkles mr-1"></i> Strip Lashes Included</span>
+                        <button onclick="selectService('Soft Glam', 35); switchTab('book');" class="bg-rosegold-gradient text-black font-semibold text-xs px-4 py-2 rounded-lg hover:opacity-90 transition">
+                            Book £35
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Full Glam Card -->
+                <div class="bg-luxury-card p-8 rounded-2xl border border-luxury-border hover:border-rosegold transition-all space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-serif text-2xl text-gray-100 font-bold">Full Glam</h3>
+                                <span class="text-xs text-rosegold">Duration: 90 Mins</span>
+                            </div>
+                            <span class="font-serif text-3xl font-bold text-rosegold-gradient">£45</span>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                            Full coverage complexion, defined eyes, lashes included and enhanced detailing. Sculpted contour, dramatic eyes, and long-lasting perfection.
+                        </p>
+                        <div class="bg-black/40 p-3 rounded-xl border border-luxury-border/40 text-xs text-gray-400 italic">
+                            Perfect for birthdays, celebrations, nights out and special occasions.
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-luxury-border/50 flex items-center justify-between">
+                        <span class="text-xs text-rosegold font-semibold"><i class="fa-solid fa-sparkles mr-1"></i> Strip Lashes Included</span>
+                        <button onclick="selectService('Full Glam', 45); switchTab('book');" class="bg-rosegold-gradient text-black font-semibold text-xs px-4 py-2 rounded-lg hover:opacity-90 transition">
+                            Book £45
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Highlight Box -->
+            <div class="max-w-4xl mx-auto bg-luxury-card p-6 rounded-2xl border border-rosegold-glow text-center space-y-2">
+                <h4 class="font-serif text-lg text-rosegold uppercase tracking-wider font-semibold">Complimentary Enhancement</h4>
+                <p class="text-sm text-gray-300">
+                    <i class="fa-solid fa-eye text-rosegold mr-2"></i> <strong>STRIP LASH APPLICATION INCLUDED</strong> with every makeup service at no additional cost.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ================= TAB 3: POLICIES & TERMS ================= -->
+        <section id="tab-policies" class="tab-content hidden space-y-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-rosegold text-xs font-semibold tracking-widest uppercase">Client Guidelines</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-rosegold-gradient mt-1 mb-2 font-bold">Studio Policies</h2>
+                <p class="text-gray-400 text-sm">Please review our studio terms to ensure a seamless experience for all clients.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Deposit Policy -->
+                <div class="bg-luxury-card p-6 rounded-2xl border border-luxury-border space-y-3">
+                    <div class="flex items-center space-x-3 text-rosegold">
+                        <i class="fa-solid fa-credit-card text-xl"></i>
+                        <h3 class="font-serif text-lg font-bold text-gray-100">Deposits</h3>
+                    </div>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li>A <strong>£15 non-refundable deposit</strong> is required to secure all appointments.</li>
+                        <li>Appointments are not confirmed until the deposit has been received.</li>
+                        <li>Deposits will be deducted from your final balance on the appointment day.</li>
+                    </ul>
+                </div>
+
+                <!-- Cancellations Policy -->
+                <div class="bg-luxury-card p-6 rounded-2xl border border-luxury-border space-y-3">
+                    <div class="flex items-center space-x-3 text-rosegold">
+                        <i class="fa-solid fa-calendar-xmark text-xl"></i>
+                        <h3 class="font-serif text-lg font-bold text-gray-100">Cancellations & Rescheduling</h3>
+                    </div>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li>A minimum of <strong>48 hours' notice</strong> is required for any rescheduling requests.</li>
+                        <li>Deposits remain strictly non-refundable.</li>
+                        <li>Same-day cancellations and no-shows will result in loss of deposit.</li>
+                    </ul>
+                </div>
+
+                <!-- Late Arrivals -->
+                <div class="bg-luxury-card p-6 rounded-2xl border border-luxury-border space-y-3">
+                    <div class="flex items-center space-x-3 text-rosegold">
+                        <i class="fa-solid fa-clock-rotate-left text-xl"></i>
+                        <h3 class="font-serif text-lg font-bold text-gray-100">Late Arrivals</h3>
+                    </div>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li>Please arrive on time for your scheduled appointment.</li>
+                        <li>Clients arriving more than <strong>15 minutes late</strong> may have their appointment shortened or canceled.</li>
+                        <li>Late arrivals affect overall service quality as artistry cannot be rushed.</li>
+                    </ul>
+                </div>
+
+                <!-- Appointment Prep -->
+                <div class="bg-luxury-card p-6 rounded-2xl border border-luxury-border space-y-3">
+                    <div class="flex items-center space-x-3 text-rosegold">
+                        <i class="fa-solid fa-sparkles text-xl"></i>
+                        <h3 class="font-serif text-lg font-bold text-gray-100">Appointment Preparation</h3>
+                    </div>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li>Arrive with a <strong>clean, freshly moisturized face</strong> with no prior makeup.</li>
+                        <li>Brows should be groomed and lips exfoliated where possible.</li>
+                        <li>Time spent removing makeup will be deducted from your appointment time.</li>
+                    </ul>
+                </div>
+
+                <!-- Allergies & Skin Conditions -->
+                <div class="bg-luxury-card p-6 rounded-2xl border border-luxury-border space-y-3">
+                    <div class="flex items-center space-x-3 text-rosegold">
+                        <i class="fa-solid fa-heart-pulse text-xl"></i>
+                        <h3 class="font-serif text-lg font-bold text-gray-100">Allergies & Skin Conditions</h3>
+                    </div>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li>Please notify us before your appointment of any skin sensitivities or allergies.</li>
+                        <li>This includes recent use of retinol, acne treatments, or chemical skin peels.</li>
+                    </ul>
+                </div>
+
+                <!-- Guests Policy -->
+                <div class="bg-luxury-card p-6 rounded-2xl border border-luxury-border space-y-3">
+                    <div class="flex items-center space-x-3 text-rosegold">
+                        <i class="fa-solid fa-user-slash text-xl"></i>
+                        <h3 class="font-serif text-lg font-bold text-gray-100">Guests & Studio Space</h3>
+                    </div>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li>Due to limited studio space, <strong>only the client receiving the service</strong> may attend.</li>
+                        <li>No additional friends, children, or family members permitted.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Payment Methods Note -->
+            <div class="max-w-4xl mx-auto bg-luxury-card p-6 rounded-2xl border border-luxury-border text-center text-xs text-gray-300">
+                <p><strong>Payment Methods:</strong> Remaining balances must be paid on the day of appointment. Bank Transfer and Cash are accepted.</p>
+            </div>
+        </section>
+
+
+        <!-- ================= TAB 4: CONTACT & INSTAGRAM ================= -->
+        <section id="tab-contact" class="tab-content hidden space-y-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-rosegold text-xs font-semibold tracking-widest uppercase">Connect With Us</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-rosegold-gradient mt-1 mb-2 font-bold">Contact & Socials</h2>
+                <p class="text-gray-400 text-sm">Follow our Instagram page for recent client transformations, portfolio looks, and updates.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto bg-luxury-card p-8 rounded-3xl border border-rosegold-glow text-center space-y-6">
+                <div class="w-24 h-24 mx-auto rounded-full p-1 bg-rosegold-gradient">
+                    <div class="w-full h-full bg-luxury-black rounded-full flex items-center justify-center">
+                        <i class="fa-brands fa-instagram text-4xl text-rosegold"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-100">Haus Of Heaven</h3>
+                    <p class="text-rosegold text-sm font-semibold">@hausofheavenofficial</p>
+                    <p class="text-xs text-gray-400 mt-2">Makeup Artistry • Enhancing your beauty, elevating your confidence.</p>
+                </div>
+
+                <div class="pt-2">
+                    <a href="https://www.instagram.com/hausofheavenofficial" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-rosegold-gradient text-black font-bold px-8 py-3 rounded-xl hover:opacity-90 transition shadow-lg text-sm">
+                        <i class="fa-brands fa-instagram text-lg mr-2"></i> Visit Instagram Page
+                    </a>
+                </div>
+
+                <div class="border-t border-luxury-border/60 pt-6 text-xs text-gray-400 space-y-2">
+                    <p><i class="fa-solid fa-envelope text-rosegold mr-2"></i> Enquiries & DM Bookings Welcome</p>
+                    <p><i class="fa-solid fa-location-dot text-rosegold mr-2"></i> Studio Location Provided Upon Booking Confirmation</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-luxury-border/40 py-8 text-center text-xs text-gray-500 space-y-2">
+        <p class="font-serif text-rosegold tracking-widest uppercase">HAUS OF HEAVEN MAKEUP ARTISTRY</p>
+        <p>© 2026 Haus Of Heaven. All Rights Reserved. Enhancing your beauty, elevating your confidence.</p>
+    </footer>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        // State Machine
+        let bookingState = {
+            serviceName: 'Soft Glam',
+            servicePrice: 35,
+            depositAmount: 15,
+            selectedDate: '',
+            selectedTime: '',
+            clientName: '',
+            clientPhone: '',
+            clientEmail: '',
+            clientInstagram: '',
+            clientNotes: ''
+        };
+
+        // Tab Switcher Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-btn').forEach(el => {
+                el.classList.remove('text-rosegold', 'border-b-2', 'border-rosegold');
+                el.classList.add('text-gray-400');
+            });
+
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            const activeNav = document.getElementById(`nav-${tabId}`);
+            if(activeNav) {
+                activeNav.classList.add('text-rosegold', 'border-b-2', 'border-rosegold');
+                activeNav.classList.remove('text-gray-400');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Service Selection
+        function selectService(name, price) {
+            bookingState.serviceName = name;
+            bookingState.servicePrice = price;
+
+            // Highlight UI Card Selection
+            const softCard = document.getElementById('card-soft-glam');
+            const fullCard = document.getElementById('card-full-glam');
+
+            if(name === 'Soft Glam') {
+                softCard.classList.add('border-rosegold-active');
+                softCard.classList.remove('border-luxury-border');
+                fullCard.classList.remove('border-rosegold-active');
+                fullCard.classList.add('border-luxury-border');
+            } else {
+                fullCard.classList.add('border-rosegold-active');
+                fullCard.classList.remove('border-luxury-border');
+                softCard.classList.remove('border-rosegold-active');
+                softCard.classList.add('border-luxury-border');
+            }
+
+            goToStep(2);
+        }
+
+        // Navigation between Booking Steps
+        function goToStep(stepNum) {
+            document.querySelectorAll('.step-card').forEach(el => el.classList.add('hidden'));
+            document.getElementById('booking-success').classList.add('hidden');
+            document.getElementById(`booking-step-${stepNum}`).classList.remove('hidden');
+
+            // Update Progress Bar
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = `${(stepNum / 5) * 100}%`;
+
+            for(let i = 1; i <= 5; i++) {
+                const label = document.getElementById(`step-label-${i}`);
+                if(i <= stepNum) {
+                    label.classList.add('text-rosegold', 'font-bold');
+                    label.classList.remove('text-gray-400');
+                } else {
+                    label.classList.remove('text-rosegold', 'font-bold');
+                    label.classList.add('text-gray-400');
+                }
+            }
+
+            if(stepNum === 5) {
+                updateSummaryView();
+            }
+        }
+
+        // Generate Time Slots based on Date Selection
+        function generateTimeSlots() {
+            const dateVal = document.getElementById('booking-date').value;
+            bookingState.selectedDate = dateVal;
+            const container = document.getElementById('time-slots-container');
+            container.innerHTML = '';
+
+            if(!dateVal) return;
+
+            const mockSlots = ['10:00 AM', '11:30 AM', '01:00 PM', '02:30 PM', '04:00 PM', '05:30 PM'];
+
+            mockSlots.forEach(slot => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'slot-btn bg-black/60 border border-luxury-border/60 hover:border-rosegold text-xs text-gray-200 py-2.5 rounded-lg transition';
+                btn.innerText = slot;
+                btn.onclick = () => {
+                    document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('bg-rosegold-gradient', 'text-black', 'font-bold'));
+                    btn.classList.add('bg-rosegold-gradient', 'text-black', 'font-bold');
+                    bookingState.selectedTime = slot;
+                    document.getElementById('btn-to-step-3').disabled = false;
+                    document.getElementById('btn-to-step-3').classList.remove('opacity-50', 'cursor-not-allowed');
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        // Step 3 Validation
+        function validateStep3() {
+            bookingState.clientName = document.getElementById('client-name').value;
+            bookingState.clientPhone = document.getElementById('client-phone').value;
+            bookingState.clientEmail = document.getElementById('client-email').value;
+            bookingState.clientInstagram = document.getElementById('client-instagram').value;
+            bookingState.clientNotes = document.getElementById('client-notes').value;
+
+            goToStep(4);
+        }
+
+        // Step 4 Policy Verification
+        function checkPolicies() {
+            const p1 = document.getElementById('policy-check-1').checked;
+            const p2 = document.getElementById('policy-check-2').checked;
+            const p3 = document.getElementById('policy-check-3').checked;
+            const p4 = document.getElementById('policy-check-4').checked;
+
+            const btn = document.getElementById('btn-to-step-5');
+            if(p1 && p2 && p3 && p4) {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // Step 5 Dynamic Calculation & Summary update
+        function updateSummaryView() {
+            document.getElementById('summary-service-name').innerText = bookingState.serviceName;
+            document.getElementById('summary-datetime').innerText = `${bookingState.selectedDate} at ${bookingState.selectedTime}`;
+            document.getElementById('summary-client-name').innerText = bookingState.clientName;
+            
+            document.getElementById('summary-total-price').innerText = `£${bookingState.servicePrice}.00`;
+            const remaining = bookingState.servicePrice - bookingState.depositAmount;
+            document.getElementById('summary-balance-due').innerText = `£${remaining}.00`;
+        }
+
+        // Simulate Payment Completion
+        function processDepositPayment() {
+            document.querySelectorAll('.step-card').forEach(el => el.classList.add('hidden'));
+            
+            const remaining = bookingState.servicePrice - bookingState.depositAmount;
+            document.getElementById('conf-ref').innerText = `HH-${Math.floor(1000 + Math.random() * 9000)}`;
+            document.getElementById('conf-balance').innerText = `£${remaining}.00 (Cash or Bank Transfer)`;
+
+            document.getElementById('booking-success').classList.remove('hidden');
+        }
+
+        // Reset Booking Flow
+        function resetBooking() {
+            document.getElementById('client-form').reset();
+            document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
+            bookingState.selectedTime = '';
+            document.getElementById('btn-to-step-3').disabled = true;
+            document.getElementById('btn-to-step-3').classList.add('opacity-50', 'cursor-not-allowed');
+            checkPolicies();
+            goToStep(1);
+        }
+
+        // Initialize default date picker limits
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('booking-date').setAttribute('min', today);
+            selectService('Soft Glam', 35);
+        };
+    </script>
+</body>
+</html>
